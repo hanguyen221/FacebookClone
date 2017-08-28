@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9E2E76E17BE8321289E417D /* Pods_FacebookClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4718B364E01DFD8A3BB51889 /* Pods_FacebookClone.framework */; };
 		FA67408D1F51BFEC0073E94C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67408C1F51BFEC0073E94C /* AppDelegate.swift */; };
-		FA67408F1F51BFEC0073E94C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67408E1F51BFEC0073E94C /* ViewController.swift */; };
-		FA6740921F51BFEC0073E94C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6740901F51BFEC0073E94C /* Main.storyboard */; };
 		FA6740941F51BFEC0073E94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6740931F51BFEC0073E94C /* Assets.xcassets */; };
 		FA6740971F51BFEC0073E94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6740951F51BFEC0073E94C /* LaunchScreen.storyboard */; };
+		FA6740A31F51D02C0073E94C /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740A21F51D02C0073E94C /* FeedController.swift */; };
+		FA6740A51F51D0550073E94C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740A41F51D0550073E94C /* LoginController.swift */; };
+		FA6740A81F51D5A30073E94C /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740A71F51D5A30073E94C /* Extension+UIView.swift */; };
+		FA6740AA1F530B780073E94C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740A91F530B780073E94C /* TabBarController.swift */; };
+		FA6740AC1F5311130073E94C /* FriendRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740AB1F5311130073E94C /* FriendRequestsController.swift */; };
+		FA6740AE1F53113A0073E94C /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740AD1F53113A0073E94C /* MessagesController.swift */; };
+		FA6740B41F5313210073E94C /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740B31F5313210073E94C /* MoreController.swift */; };
+		FA6740B61F5313320073E94C /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740B51F5313320073E94C /* NotificationsController.swift */; };
+		FA6740B81F532A930073E94C /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740B71F532A930073E94C /* Extension+UIColor.swift */; };
+		FA6740BA1F53DEC30073E94C /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740B91F53DEC30073E94C /* PaddedTextField.swift */; };
+		FA6740BC1F53EF550073E94C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BB1F53EF550073E94C /* Const.swift */; };
+		FA6740BE1F542BB10073E94C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BD1F542BB10073E94C /* SignUpController.swift */; };
+		FA6740C01F54388E0073E94C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BF1F54388D0073E94C /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E396C53E2468DFFDA57C635 /* Pods-FacebookClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone.debug.xcconfig"; sourceTree = "<group>"; };
+		3A4255D4867F21F2F686CA16 /* Pods-FacebookClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone.release.xcconfig"; sourceTree = "<group>"; };
+		4718B364E01DFD8A3BB51889 /* Pods_FacebookClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6740891F51BFEC0073E94C /* FacebookClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA67408C1F51BFEC0073E94C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA67408E1F51BFEC0073E94C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA6740911F51BFEC0073E94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA6740931F51BFEC0073E94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6740961F51BFEC0073E94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA6740981F51BFEC0073E94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA6740A21F51D02C0073E94C /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedController.swift; path = Controller/FeedController.swift; sourceTree = "<group>"; };
+		FA6740A41F51D0550073E94C /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
+		FA6740A71F51D5A30073E94C /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		FA6740A91F530B780073E94C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controller/TabBarController.swift; sourceTree = "<group>"; };
+		FA6740AB1F5311130073E94C /* FriendRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendRequestsController.swift; path = Controller/FriendRequestsController.swift; sourceTree = "<group>"; };
+		FA6740AD1F53113A0073E94C /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesController.swift; path = Controller/MessagesController.swift; sourceTree = "<group>"; };
+		FA6740B31F5313210073E94C /* MoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreController.swift; path = Controller/MoreController.swift; sourceTree = "<group>"; };
+		FA6740B51F5313320073E94C /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsController.swift; path = Controller/NotificationsController.swift; sourceTree = "<group>"; };
+		FA6740B71F532A930073E94C /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+UIColor.swift"; path = "Helpers/Extension+UIColor.swift"; sourceTree = "<group>"; };
+		FA6740B91F53DEC30073E94C /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddedTextField.swift; path = View/PaddedTextField.swift; sourceTree = "<group>"; };
+		FA6740BB1F53EF550073E94C /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		FA6740BD1F542BB10073E94C /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpController.swift; path = Controller/SignUpController.swift; sourceTree = "<group>"; };
+		FA6740BF1F54388D0073E94C /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E2E76E17BE8321289E417D /* Pods_FacebookClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EF9671A871803ABB5DCA9A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E396C53E2468DFFDA57C635 /* Pods-FacebookClone.debug.xcconfig */,
+				3A4255D4867F21F2F686CA16 /* Pods-FacebookClone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E57BBD3C16F4E8BBE1B3FFB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4718B364E01DFD8A3BB51889 /* Pods_FacebookClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA6740801F51BFEC0073E94C = {
 			isa = PBXGroup;
 			children = (
 				FA67408B1F51BFEC0073E94C /* FacebookClone */,
 				FA67408A1F51BFEC0073E94C /* Products */,
+				6EF9671A871803ABB5DCA9A7 /* Pods */,
+				E57BBD3C16F4E8BBE1B3FFB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +100,65 @@
 		FA67408B1F51BFEC0073E94C /* FacebookClone */ = {
 			isa = PBXGroup;
 			children = (
+				FA6740BB1F53EF550073E94C /* Const.swift */,
+				FA6740A61F51D55F0073E94C /* Helpers */,
+				FA6740A11F51C1950073E94C /* Model */,
+				FA6740A01F51C1910073E94C /* View */,
+				FA67409F1F51C1660073E94C /* Controller */,
+				FA67409E1F51C15A0073E94C /* Supporting files */,
+			);
+			path = FacebookClone;
+			sourceTree = "<group>";
+		};
+		FA67409E1F51C15A0073E94C /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				FA67408C1F51BFEC0073E94C /* AppDelegate.swift */,
-				FA67408E1F51BFEC0073E94C /* ViewController.swift */,
-				FA6740901F51BFEC0073E94C /* Main.storyboard */,
 				FA6740931F51BFEC0073E94C /* Assets.xcassets */,
 				FA6740951F51BFEC0073E94C /* LaunchScreen.storyboard */,
 				FA6740981F51BFEC0073E94C /* Info.plist */,
 			);
-			path = FacebookClone;
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		FA67409F1F51C1660073E94C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA6740BF1F54388D0073E94C /* BaseController.swift */,
+				FA6740A41F51D0550073E94C /* LoginController.swift */,
+				FA6740BD1F542BB10073E94C /* SignUpController.swift */,
+				FA6740A91F530B780073E94C /* TabBarController.swift */,
+				FA6740A21F51D02C0073E94C /* FeedController.swift */,
+				FA6740AB1F5311130073E94C /* FriendRequestsController.swift */,
+				FA6740AD1F53113A0073E94C /* MessagesController.swift */,
+				FA6740B51F5313320073E94C /* NotificationsController.swift */,
+				FA6740B31F5313210073E94C /* MoreController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FA6740A01F51C1910073E94C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA6740B91F53DEC30073E94C /* PaddedTextField.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FA6740A11F51C1950073E94C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA6740A61F51D55F0073E94C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA6740A71F51D5A30073E94C /* Extension+UIView.swift */,
+				FA6740B71F532A930073E94C /* Extension+UIColor.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA67409B1F51BFEC0073E94C /* Build configuration list for PBXNativeTarget "FacebookClone" */;
 			buildPhases = (
+				5322DFC12565C8B63511DDC7 /* [CP] Check Pods Manifest.lock */,
 				FA6740851F51BFEC0073E94C /* Sources */,
 				FA6740861F51BFEC0073E94C /* Frameworks */,
 				FA6740871F51BFEC0073E94C /* Resources */,
+				95B77CC95BCC6CDA41B4FBBF /* [CP] Embed Pods Frameworks */,
+				E2E060BC55B47737E2DF8F66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,33 +226,84 @@
 			files = (
 				FA6740971F51BFEC0073E94C /* LaunchScreen.storyboard in Resources */,
 				FA6740941F51BFEC0073E94C /* Assets.xcassets in Resources */,
-				FA6740921F51BFEC0073E94C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5322DFC12565C8B63511DDC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95B77CC95BCC6CDA41B4FBBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E060BC55B47737E2DF8F66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA6740851F51BFEC0073E94C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA67408F1F51BFEC0073E94C /* ViewController.swift in Sources */,
+				FA6740BE1F542BB10073E94C /* SignUpController.swift in Sources */,
 				FA67408D1F51BFEC0073E94C /* AppDelegate.swift in Sources */,
+				FA6740C01F54388E0073E94C /* BaseController.swift in Sources */,
+				FA6740B81F532A930073E94C /* Extension+UIColor.swift in Sources */,
+				FA6740A51F51D0550073E94C /* LoginController.swift in Sources */,
+				FA6740BA1F53DEC30073E94C /* PaddedTextField.swift in Sources */,
+				FA6740A81F51D5A30073E94C /* Extension+UIView.swift in Sources */,
+				FA6740BC1F53EF550073E94C /* Const.swift in Sources */,
+				FA6740B61F5313320073E94C /* NotificationsController.swift in Sources */,
+				FA6740AE1F53113A0073E94C /* MessagesController.swift in Sources */,
+				FA6740B41F5313210073E94C /* MoreController.swift in Sources */,
+				FA6740AA1F530B780073E94C /* TabBarController.swift in Sources */,
+				FA6740A31F51D02C0073E94C /* FeedController.swift in Sources */,
+				FA6740AC1F5311130073E94C /* FriendRequestsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA6740901F51BFEC0073E94C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA6740911F51BFEC0073E94C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA6740951F51BFEC0073E94C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,10 +412,12 @@
 		};
 		FA67409C1F51BFEC0073E94C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E396C53E2468DFFDA57C635 /* Pods-FacebookClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A4B27XWSTD;
 				INFOPLIST_FILE = FacebookClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Ha-Nguyen.FacebookClone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,10 +427,12 @@
 		};
 		FA67409D1F51BFEC0073E94C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A4255D4867F21F2F686CA16 /* Pods-FacebookClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A4B27XWSTD;
 				INFOPLIST_FILE = FacebookClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Ha-Nguyen.FacebookClone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,6 +459,7 @@
 				FA67409D1F51BFEC0073E94C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
