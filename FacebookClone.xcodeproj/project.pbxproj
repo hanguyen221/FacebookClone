@@ -24,6 +24,7 @@
 		FA6740BC1F53EF550073E94C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BB1F53EF550073E94C /* Const.swift */; };
 		FA6740BE1F542BB10073E94C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BD1F542BB10073E94C /* SignUpController.swift */; };
 		FA6740C01F54388E0073E94C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BF1F54388D0073E94C /* BaseController.swift */; };
+		FAA670961F551E9800BBE098 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA670951F551E9800BBE098 /* NotificationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FA6740BB1F53EF550073E94C /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		FA6740BD1F542BB10073E94C /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpController.swift; path = Controller/SignUpController.swift; sourceTree = "<group>"; };
 		FA6740BF1F54388D0073E94C /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
+		FAA670951F551E9800BBE098 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCell.swift; path = View/NotificationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6740B91F53DEC30073E94C /* PaddedTextField.swift */,
+				FAA670951F551E9800BBE098 /* NotificationCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				FA6740B41F5313210073E94C /* MoreController.swift in Sources */,
 				FA6740AA1F530B780073E94C /* TabBarController.swift in Sources */,
 				FA6740A31F51D02C0073E94C /* FeedController.swift in Sources */,
+				FAA670961F551E9800BBE098 /* NotificationCell.swift in Sources */,
 				FA6740AC1F5311130073E94C /* FriendRequestsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -115,25 +115,28 @@ class SignUpController: BaseController, UITextFieldDelegate {
     }
     
     private func setupTitleLabel() {
-        titleLabel.anchorWithConstraints(topAnchor: view.topAnchor,
-                                         topConstant: 150,
+        titleLabel.anchorWithConstraints(bottomAnchor: noticeLabel.topAnchor,
+                                         bottomConstant: 16,
                                          centerXAnchor: view.centerXAnchor)
     }
     
     private func setupNoticeLabel() {
-        noticeLabel.anchorWithConstraints(topAnchor: titleLabel.bottomAnchor,
-                                          topConstant: 16,
-                                          leftAnchor: view.leftAnchor,
+        noticeLabel.anchorWithConstraints(leftAnchor: view.leftAnchor,
                                           leftConstant: 24,
+                                          bottomAnchor: inputContainerView.topAnchor,
+                                          bottomConstant: 16,
                                           centerXAnchor: view.centerXAnchor)
         noticeLabel.sizeToFit()
     }
+    
+    private var inputContainerViewCenterYConstraint: NSLayoutConstraint?
     
     private func setupInputContainerView() {
         inputContainerView.anchorWithConstraints(centerXAnchor: view.centerXAnchor,
                                                  centerYAnchor: view.centerYAnchor,
                                                  widthConstant: view.frame.size.width - 32,
                                                  heightConstant: 90)
+        inputContainerViewCenterYConstraint = inputContainerView.getCenterYConstraint()
     }
     
     private func setupEmailTextField() {
@@ -159,11 +162,14 @@ class SignUpController: BaseController, UITextFieldDelegate {
                                                 heightConstant: 40)
     }
     
+    private var backToLoginButtonBottomConstraint: NSLayoutConstraint?
+    
     private func setupBackToLoginButton() {
         backToLoginButton.anchorWithConstraints(leftAnchor: view.leftAnchor,
                                                 bottomAnchor: view.bottomAnchor,
                                                 rightAnchor: view.rightAnchor,
                                                 heightConstant: 40)
+        backToLoginButtonBottomConstraint = backToLoginButton.getBottomConstraint()
     }
     
     private func setupSeparatorLineView() {
@@ -171,6 +177,22 @@ class SignUpController: BaseController, UITextFieldDelegate {
                                                 bottomAnchor: backToLoginButton.topAnchor,
                                                 rightAnchor: view.rightAnchor,
                                                 heightConstant: 1)
+    }
+    
+    override func handleKeyboardShowing() {
+        backToLoginButtonBottomConstraint?.constant -= keyboardHeight
+        inputContainerViewCenterYConstraint?.constant -= keyboardHeight / 2
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: { 
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    override func handleKeyboardHiding() {
+        backToLoginButtonBottomConstraint?.constant += keyboardHeight
+        inputContainerViewCenterYConstraint?.constant += keyboardHeight / 2
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
