@@ -10,24 +10,14 @@ import UIKit
 
 class FriendRequestsController: BaseController {
     
-    let welcomeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "This is friend requests"
-        label.textAlignment = .center
-        return label
+    private let tableView: UITableView = {
+        let tv = UITableView()
+        tv.backgroundColor = .lightGray
+        return tv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(welcomeLabel)
-        setupWelcomeLabel()
-    }
-    
-    func setupWelcomeLabel() {
-        welcomeLabel.anchorWithConstraints(topAnchor: view.topAnchor,
-                                           leftAnchor: view.leftAnchor,
-                                           widthConstant: view.frame.width,
-                                           heightConstant: view.frame.height)
     }
 }

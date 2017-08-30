@@ -24,6 +24,22 @@ class NotificationCell: UITableViewCell {
         setupNotiImageView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        textLabel?.frame = CGRect(x: 16 + 44 + 16,
+                                  y: (textLabel?.frame.origin.y)! - 2,
+                                  width: UIScreen.main.bounds.width - 16 - 44 - 16 - 16,
+                                  height: (textLabel?.frame.size.height)!)
+        
+        textLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        detailTextLabel?.frame = CGRect(x: 16 + 44 + 16,
+                                  y: (detailTextLabel?.frame.origin.y)! + 2,
+                                  width: UIScreen.main.bounds.width - 16 - 44 - 16 - 16,
+                                  height: (detailTextLabel?.frame.size.height)!)
+        detailTextLabel?.font = UIFont.systemFont(ofSize: 11)
+    }
+    
     private func setupNotiImageView() {
         notiImageView.anchorWithConstraints(leftAnchor: leftAnchor,
                                             leftConstant: 16,
