@@ -38,7 +38,7 @@ class NotificationsController: BaseController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 76
+        return 78
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,8 +47,9 @@ class NotificationsController: BaseController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! NotificationCell
-        cell.textLabel?.text = "Notification"
-        cell.detailTextLabel?.text = "Date and time"
+        cell.notiLabel.text = "Manh Tuan posted in J2Team Community, let's go check out what he has written."
+        cell.timeLabel.text = "2 hours ago"
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return cell
     }
 }

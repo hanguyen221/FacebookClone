@@ -25,6 +25,7 @@
 		FA6740BE1F542BB10073E94C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BD1F542BB10073E94C /* SignUpController.swift */; };
 		FA6740C01F54388E0073E94C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6740BF1F54388D0073E94C /* BaseController.swift */; };
 		FAA670961F551E9800BBE098 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA670951F551E9800BBE098 /* NotificationCell.swift */; };
+		FAF2A9691F56F9140088D09D /* FriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A9681F56F9140088D09D /* FriendRequestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FA6740BD1F542BB10073E94C /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpController.swift; path = Controller/SignUpController.swift; sourceTree = "<group>"; };
 		FA6740BF1F54388D0073E94C /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
 		FAA670951F551E9800BBE098 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCell.swift; path = View/NotificationCell.swift; sourceTree = "<group>"; };
+		FAF2A9681F56F9140088D09D /* FriendRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendRequestCell.swift; path = View/FriendRequestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				FA6740B91F53DEC30073E94C /* PaddedTextField.swift */,
 				FAA670951F551E9800BBE098 /* NotificationCell.swift */,
+				FAF2A9681F56F9140088D09D /* FriendRequestCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				FA6740BE1F542BB10073E94C /* SignUpController.swift in Sources */,
 				FA67408D1F51BFEC0073E94C /* AppDelegate.swift in Sources */,
 				FA6740C01F54388E0073E94C /* BaseController.swift in Sources */,
+				FAF2A9691F56F9140088D09D /* FriendRequestCell.swift in Sources */,
 				FA6740B81F532A930073E94C /* Extension+UIColor.swift in Sources */,
 				FA6740A51F51D0550073E94C /* LoginController.swift in Sources */,
 				FA6740BA1F53DEC30073E94C /* PaddedTextField.swift in Sources */,

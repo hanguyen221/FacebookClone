@@ -10,6 +10,35 @@ import UIKit
 
 class NotificationCell: UITableViewCell {
     
+    private let IMAGE_HEIGHT: CGFloat = 66
+    private let HORIZONTAL_SPACE: CGFloat = 10
+    
+    let notiLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.textColor = .darkGray
+        label.numberOfLines = 3
+        return label
+    }()
+    
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .lightGray
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    private let stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.backgroundColor = .green
+        sv.alignment = .leading
+        sv.distribution = .fill
+        sv.axis = .vertical
+        sv.spacing = 2
+        return sv
+    }()
+    
     private let notiImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "ic_notifications")
@@ -18,37 +47,44 @@ class NotificationCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(notiImageView)
         setupNotiImageView()
+        
+        addSubview(stackView)
+        setupStackView()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        textLabel?.frame = CGRect(x: 16 + 44 + 16,
-                                  y: (textLabel?.frame.origin.y)! - 2,
-                                  width: UIScreen.main.bounds.width - 16 - 44 - 16 - 16,
-                                  height: (textLabel?.frame.size.height)!)
-        
-        textLabel?.font = UIFont.systemFont(ofSize: 14)
-        
-        detailTextLabel?.frame = CGRect(x: 16 + 44 + 16,
-                                  y: (detailTextLabel?.frame.origin.y)! + 2,
-                                  width: UIScreen.main.bounds.width - 16 - 44 - 16 - 16,
-                                  height: (detailTextLabel?.frame.size.height)!)
-        detailTextLabel?.font = UIFont.systemFont(ofSize: 11)
+    private func setupStackView() {
+        stackView.addArrangedSubview(notiLabel)
+        stackView.addArrangedSubview(timeLabel)
+        stackView.anchorWithConstraints(leftAnchor: notiImageView.rightAnchor,
+                                        leftConstant: HORIZONTAL_SPACE,
+                                        rightAnchor: rightAnchor,
+                                        rightConstant: HORIZONTAL_SPACE,
+                                        centerYAnchor: centerYAnchor)
     }
     
     private func setupNotiImageView() {
         notiImageView.anchorWithConstraints(leftAnchor: leftAnchor,
-                                            leftConstant: 16,
+                                            leftConstant: HORIZONTAL_SPACE,
                                             centerYAnchor: centerYAnchor,
-                                            widthConstant: 44,
-                                            heightConstant: 44)
+                                            widthConstant: IMAGE_HEIGHT,
+                                            heightConstant: IMAGE_HEIGHT)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+
+
+
+
+
+
+
+
