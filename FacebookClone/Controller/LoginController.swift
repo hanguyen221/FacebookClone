@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LoginController: BaseController, UITextFieldDelegate {
+class LoginController: BaseController {
     
     let blueHeaderView: UIView = {
         let view = UIView()
-        view.backgroundColor = Const.COLOR_FACEBOOK_BLUE
+        view.backgroundColor = Const.COLOR_FACEBOOK_LIGHT_GRAY
         return view
     }()
     
@@ -23,11 +23,9 @@ class LoginController: BaseController, UITextFieldDelegate {
         return iv
     }()
     
-    let whiteFacebookImageView: UIImageView = {
+    let logoImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "ic_facebook_white")
-        iv.layer.cornerRadius = 3
-        iv.layer.masksToBounds = true
+        iv.image = UIImage(named: "favicon")
         return iv
     }()
     
@@ -42,7 +40,7 @@ class LoginController: BaseController, UITextFieldDelegate {
     
     lazy var emailTextField: PaddedTextField = {
         let txtField = PaddedTextField()
-        txtField.placeholder = "Email or phone number"
+        txtField.placeholder = "Email"
         txtField.returnKeyType = UIReturnKeyType.next
         txtField.delegate = self
         return txtField
@@ -59,6 +57,7 @@ class LoginController: BaseController, UITextFieldDelegate {
         txtField.placeholder = "Password"
         txtField.returnKeyType = UIReturnKeyType.done
         txtField.delegate = self
+        txtField.isSecureTextEntry = true
         return txtField
     }()
     
@@ -69,8 +68,63 @@ class LoginController: BaseController, UITextFieldDelegate {
         button.backgroundColor = Const.COLOR_FACEBOOK_BLUE
         button.setTitleColor(Const.COLOR_WHITE_ALPHA15, for: .normal)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
+    
+    @objc func handleLogin() {
+//        let url = URL(string: "http://localhost/Facklone/login.php")
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "POST"
+//        let body = "email=\(emailTextField.text!.lowercased())&password=\(passwordTextField.text!)"
+//        request.httpBody = body.data(using: .utf8)
+//
+//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if (error != nil) {
+//                print(error!)
+//            } else {
+//                guard let data = data else {
+//                    print("Data is empty")
+//                    return
+//                }
+//                guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary else {
+//                    print("Cannot JSONSerialize data")
+//                    return
+//                }
+//                guard let status = json["status"] as? String,
+//                        let message = json["message"] as? String else {
+//                    print("Status or message not found")
+//                    return
+//                }
+//                if (status == "200") {
+//                    print("Logged in succesfully")
+//                    if let username = json["username"] as? String {
+//                        Client.shared.getModelUser().username = username
+//                    }
+//                    if let firstName = json["first_name"] as? String {
+//                        Client.shared.getModelUser().firstName = firstName
+//                    }
+//                    if let lastName = json["last_name"] as? String {
+//                        Client.shared.getModelUser().lastName = lastName
+//                    }
+//                    if let email = json["email"] as? String {
+//                        Client.shared.getModelUser().email = email
+//                    }
+//                    if let phoneNumber = json["phone_number"] as? String {
+//                        Client.shared.getModelUser().phoneNumber = phoneNumber
+//                    }
+//                    self.defaultAlertWithMessage("Logged in succesfully", completion: {
+//                        self.dismiss(animated: true, completion: nil)
+//                    })
+//                    print(json)
+//                } else {
+//                    self.defaultAlertWithMessage(message, completion: nil)
+//                }
+//            }
+//        }
+//        task.resume()
+        self.dismiss(animated: true, completion: nil)
+    }
     
     let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
@@ -82,7 +136,7 @@ class LoginController: BaseController, UITextFieldDelegate {
     
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign Up for Facebook", for: .normal)
+        button.setTitle("Sign Up for \(Const.APP_NAME)", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         button.setTitleColor(Const.COLOR_FACEBOOK_BLUE, for: .normal)
         button.layer.borderColor = Const.COLOR_FACEBOOK_MEDIUM_BLUE.cgColor
@@ -93,8 +147,9 @@ class LoginController: BaseController, UITextFieldDelegate {
         return button
     }()
     
-    func handleSignUp() {
+    @objc func handleSignUp() {
         let signUpController = SignUpController()
+        signUpController.loginController = self
         present(signUpController, animated: true, completion: nil)
     }
     
@@ -118,42 +173,50 @@ class LoginController: BaseController, UITextFieldDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(blueHeaderView)
-        blueHeaderView.addSubview(headerImageView)
-        blueHeaderView.addSubview(whiteFacebookImageView)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         view.addSubview(inputContainerView)
         setupInputContainerView()
         
+        view.addSubview(blueHeaderView)
+        setupBlueHeaderView()
+        
+//        blueHeaderView.addSubview(headerImageView)
+//        setupHeaderImageView()
+        
+        blueHeaderView.addSubview(logoImageView)
+        setupLogoImageView()
+        
         inputContainerView.addSubview(emailTextField)
+        setupEmailTextField()
+        
         inputContainerView.addSubview(separatorLineView)
+        setupSeparatorLineView()
+        
         inputContainerView.addSubview(passwordTextField)
+        setupPasswordTextField()
+        
+        view.addSubview(signUpButton)
+        setupSignUpButton()
         
         view.addSubview(orLineView)
-        view.addSubview(orLabel)
-        view.addSubview(loginButton)
-        view.addSubview(forgotPasswordButton)
-        view.addSubview(signUpButton)
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        
-        setupBlueHeaderView()
-        setupHeaderImageView()
-        setupWhiteFacebookImageView()
-        setupEmailTextField()
-        setupSeparatorLineView()
-        setupPasswordTextField()
-        setupLoginButton()
-        setupForgotPasswordButton()
-        setupSignUpButton()
         setupOrLineView()
+        
+        view.addSubview(orLabel)
         setupOrLabel()
+        
+        view.addSubview(loginButton)
+        setupLoginButton()
+        
+        view.addSubview(forgotPasswordButton)
+        setupForgotPasswordButton()
     }
     
     override func handleKeyboardShowing() {
         signUpButtonBottomConstraint?.constant -= keyboardHeight
         inputContainerViewCenterYAnchor?.constant -= keyboardHeight / 2 + 20
-        whiteFacebookImageViewHeightConstraint?.constant -= 14
-        whiteFacebookImageViewWidthConstraint?.constant -= 14
+        logoImageViewHeightConstraint?.constant -= 34
+        logoImageViewWidthConstraint?.constant -= 34
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.headerImageView.alpha = 0
@@ -166,8 +229,8 @@ class LoginController: BaseController, UITextFieldDelegate {
     override func handleKeyboardHiding() {
         signUpButtonBottomConstraint?.constant += keyboardHeight
         inputContainerViewCenterYAnchor?.constant += keyboardHeight / 2 + 20
-        whiteFacebookImageViewHeightConstraint?.constant += 14
-        whiteFacebookImageViewWidthConstraint?.constant += 14
+        logoImageViewHeightConstraint?.constant += 34
+        logoImageViewWidthConstraint?.constant += 34
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.headerImageView.alpha = 1
@@ -177,7 +240,7 @@ class LoginController: BaseController, UITextFieldDelegate {
         }, completion: nil)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
@@ -189,20 +252,22 @@ class LoginController: BaseController, UITextFieldDelegate {
                                              rightAnchor: view.rightAnchor)
     }
     
-    private var whiteFacebookImageViewWidthConstraint: NSLayoutConstraint?
-    private var whiteFacebookImageViewHeightConstraint: NSLayoutConstraint?
+    private var logoImageViewWidthConstraint: NSLayoutConstraint?
+    private var logoImageViewHeightConstraint: NSLayoutConstraint?
     
-    private func setupWhiteFacebookImageView() {
-        whiteFacebookImageView.anchorWithConstraints(centerXAnchor: blueHeaderView.centerXAnchor,
-                                                     centerYAnchor: blueHeaderView.centerYAnchor,
-                                                     widthConstant: 44,
-                                                     heightConstant: 44)
-        whiteFacebookImageViewWidthConstraint = whiteFacebookImageView.getWidthConstraint()
-        whiteFacebookImageViewHeightConstraint = whiteFacebookImageView.getHeightConstraint()
+    private func setupLogoImageView() {
+        logoImageView.anchorWithConstraints(centerXAnchor: blueHeaderView.centerXAnchor,
+                                            centerYAnchor: blueHeaderView.centerYAnchor,
+                                            centerYConstant: 5,
+                                            widthConstant: 66,
+                                            heightConstant: 66)
+        logoImageViewWidthConstraint = logoImageView.getWidthConstraint()
+        logoImageViewHeightConstraint = logoImageView.getHeightConstraint()
     }
     
     private func setupHeaderImageView() {
         headerImageView.anchorWithConstraints(leftAnchor: blueHeaderView.leftAnchor,
+                                              leftConstant: 10,
                                               bottomAnchor: blueHeaderView.bottomAnchor,
                                               rightAnchor: blueHeaderView.rightAnchor,
                                               heightConstant: 30)
@@ -210,6 +275,7 @@ class LoginController: BaseController, UITextFieldDelegate {
         view.layoutIfNeeded()
         headerImageView.getHeightConstraint()?.constant = (image?.size.height)! * headerImageView.frame.size.width / (image?.size.width)!
         view.layoutIfNeeded()
+        headerImageView.alpha = 0
     }
     
     private var inputContainerViewCenterYAnchor: NSLayoutConstraint?
@@ -285,7 +351,10 @@ class LoginController: BaseController, UITextFieldDelegate {
                                       widthConstant: 36)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (super.textFieldShouldReturn(textField)) {
+            return true
+        }
         if textField == emailTextField {
             emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()

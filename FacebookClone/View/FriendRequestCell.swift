@@ -48,7 +48,7 @@ class FriendRequestCell: UITableViewCell {
         return button
     }()
     
-    func handleAddFriend() {
+    @objc func handleAddFriend() {
         print("Friend added")
     }
     
@@ -66,7 +66,7 @@ class FriendRequestCell: UITableViewCell {
         return button
     }()
     
-    func handleDelete() {
+    @objc func handleDelete() {
         print("Request deleted")
     }
     

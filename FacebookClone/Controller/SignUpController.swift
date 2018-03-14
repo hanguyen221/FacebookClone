@@ -8,12 +8,13 @@
 
 import UIKit
 
-class SignUpController: BaseController, UITextFieldDelegate {
+class SignUpController: BaseController {
     
+    var loginController: LoginController?
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sign Up for Facebook"
+        label.text = "Sign Up for \(Const.APP_NAME)"
         label.textColor = Const.COLOR_FACEBOOK_BLUE
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
@@ -51,6 +52,7 @@ class SignUpController: BaseController, UITextFieldDelegate {
         txtField.delegate = self
         txtField.layer.cornerRadius = 3
         txtField.layer.masksToBounds = true
+        txtField.isSecureTextEntry = true
         return txtField
     }()
     
@@ -63,8 +65,50 @@ class SignUpController: BaseController, UITextFieldDelegate {
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         button.isEnabled = false
+        button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
         return button
     }()
+    
+    @objc func signUp() {
+        print("Start to sign up user...")
+        let url = URL(string: "http://localhost/Facklone/register.php")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        let body = "email=\(emailTextField.text!.lowercased())&password=\(passwordTextField.text!)"
+        request.httpBody = body.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if (error != nil) {
+                print(error!)
+            } else {
+                DispatchQueue.main.async {
+                    guard let data = data else {
+                        print("Empty data")
+                        return
+                    }
+                    guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary else {
+                        print("Cannot JSONSerialize data")
+                        return
+                    }
+                    guard let status = json["status"] as? String else {
+                        print("Cannot get status")
+                        return
+                    }
+                    if (status == "200") {
+                        print("Sucessfully signed up!")
+                        self.defaultAlertWithMessage("Sucessfully signed up!", completion: {
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }
+                    if (status == "400") {
+                        print("Could not sign up!")
+                        self.defaultAlertWithMessage("Could not sign up!", completion: nil)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
     
     let backToLoginButton: UIButton = {
         let button = UIButton(type: .system)
@@ -75,7 +119,7 @@ class SignUpController: BaseController, UITextFieldDelegate {
         return button
     }()
     
-    func dismissView() {
+    @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -110,7 +154,7 @@ class SignUpController: BaseController, UITextFieldDelegate {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
@@ -196,13 +240,21 @@ class SignUpController: BaseController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if emailTextField.text! != "" && passwordTextField.text! != "" {
+        if (emailTextField.text! != "" && passwordTextField.text! != "") {
             signUpButton.isEnabled = true
             signUpButton.setTitleColor(Const.COLOR_FACEBOOK_WHITE, for: .normal)
         } else {
             signUpButton.isEnabled = false
             signUpButton.setTitleColor(Const.COLOR_WHITE_ALPHA15, for: .normal)
         }
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (super.textFieldShouldReturn(textField)) {
+            return true
+        }
+        textField.resignFirstResponder()
+        return true
     }
 }
 
