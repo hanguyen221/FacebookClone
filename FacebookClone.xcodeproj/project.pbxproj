@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C9E2E76E17BE8321289E417D /* Pods_FacebookClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4718B364E01DFD8A3BB51889 /* Pods_FacebookClone.framework */; };
+		FA1D9852205D263F0001E159 /* DlgKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9851205D263F0001E159 /* DlgKeyboard.swift */; };
+		FA1D9854205D44C30001E159 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9853205D44C30001E159 /* PaddedLabel.swift */; };
 		FA4BB00B1F89D240004BE648 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BB00A1F89D240004BE648 /* Client.swift */; };
 		FA4BB00D1F89D39F004BE648 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BB00C1F89D39F004BE648 /* ModelUser.swift */; };
 		FA4BB00F1F8A03B5004BE648 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BB00E1F8A03B5004BE648 /* ProfileController.swift */; };
@@ -41,6 +43,8 @@
 		2E396C53E2468DFFDA57C635 /* Pods-FacebookClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone.debug.xcconfig"; sourceTree = "<group>"; };
 		3A4255D4867F21F2F686CA16 /* Pods-FacebookClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-FacebookClone/Pods-FacebookClone.release.xcconfig"; sourceTree = "<group>"; };
 		4718B364E01DFD8A3BB51889 /* Pods_FacebookClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1D9851205D263F0001E159 /* DlgKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DlgKeyboard.swift; sourceTree = "<group>"; };
+		FA1D9853205D44C30001E159 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaddedLabel.swift; path = View/PaddedLabel.swift; sourceTree = "<group>"; };
 		FA4BB00A1F89D240004BE648 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		FA4BB00C1F89D39F004BE648 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelUser.swift; path = Model/ModelUser.swift; sourceTree = "<group>"; };
 		FA4BB00E1F8A03B5004BE648 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Controller/ProfileController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				FA6740B31F5313210073E94C /* MoreController.swift */,
 				FA4BB00E1F8A03B5004BE648 /* ProfileController.swift */,
 				FA4BB0121F8A4D55004BE648 /* EditProfileController.swift */,
+				FA1D9851205D263F0001E159 /* DlgKeyboard.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				FA4BB0101F8A48BE004BE648 /* ProfileCell.swift */,
 				FA95F25C1FE6D8CA001B7E66 /* NavigationView.swift */,
 				FA95F2601FE6DE99001B7E66 /* CourseCell.swift */,
+				FA1D9853205D44C30001E159 /* PaddedLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				FA4BB0131F8A4D55004BE648 /* EditProfileController.swift in Sources */,
 				FA4BB00F1F8A03B5004BE648 /* ProfileController.swift in Sources */,
 				FAE0990A1FE6E5C000F7775D /* Utils.swift in Sources */,
+				FA1D9854205D44C30001E159 /* PaddedLabel.swift in Sources */,
 				FA95F25F1FE6D96F001B7E66 /* Extension+UIImage.swift in Sources */,
 				FA6740C01F54388E0073E94C /* BaseController.swift in Sources */,
 				FAF2A9691F56F9140088D09D /* FriendRequestCell.swift in Sources */,
@@ -332,6 +339,7 @@
 				FA6740BA1F53DEC30073E94C /* PaddedTextField.swift in Sources */,
 				FA6740A81F51D5A30073E94C /* Extension+UIView.swift in Sources */,
 				FA95F2611FE6DE99001B7E66 /* CourseCell.swift in Sources */,
+				FA1D9852205D263F0001E159 /* DlgKeyboard.swift in Sources */,
 				FA4BB0111F8A48BE004BE648 /* ProfileCell.swift in Sources */,
 				FA6740BC1F53EF550073E94C /* Const.swift in Sources */,
 				FA6740B61F5313320073E94C /* NotificationsController.swift in Sources */,

@@ -49,6 +49,24 @@ class FeedController: BaseController, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CourseCell
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tabBarController?.tabBar.isHidden = true
+        showCustomerKeyboard(value: 2) { (value) in
+            print("Got value: \(value)")
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func showCustomerKeyboard(value: Int?, onOK: @escaping (Double) -> Void) {
+        let dlgKeyboard = DlgKeyboard()
+        dlgKeyboard.modalPresentationStyle = .overFullScreen
+        if let value = value {
+            dlgKeyboard.valueLabel.text = String(value)
+        }
+        dlgKeyboard.onOK = onOK
+        self.present(dlgKeyboard, animated: true, completion: nil)
+    }
 
 }
 
